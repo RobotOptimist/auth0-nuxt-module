@@ -1,0 +1,23 @@
+{
+  "name": "auth0-nuxt",
+  "version": "1.0.0",
+  "description": "an auth0 exclusive nuxt package in typescript",
+  "main": "module/index.js",
+  "scripts": {
+    "test": "lint && jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/RobotOptimist/auth0-nuxt-module.git"
+  },
+  "keywords": [
+    "auth0",
+    "nuxt"
+  ],
+  "author": "james macivor",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/RobotOptimist/auth0-nuxt-module/issues"
+  },
+  "homepage": "https://github.com/RobotOptimist/auth0-nuxt-module#readme"
+}
