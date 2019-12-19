@@ -19,5 +19,8 @@
   "bugs": {
     "url": "https://github.com/RobotOptimist/auth0-nuxt-module/issues"
   },
-  "homepage": "https://github.com/RobotOptimist/auth0-nuxt-module#readme"
+  "homepage": "https://github.com/RobotOptimist/auth0-nuxt-module#readme",
+  "dependencies": {
+    "@nuxt/types": "^0.5.7"
+  }
 }
