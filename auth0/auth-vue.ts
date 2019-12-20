@@ -1,5 +1,6 @@
 import Vue from "vue";
 import Auth0Client from "@auth0/auth0-spa-js/dist/typings/Auth0Client";
+import Auth0PluginOptions from './auth0PluginOptions';
 
 
 export default class AuthVue extends Vue {
@@ -10,24 +11,14 @@ export default class AuthVue extends Vue {
     popupOpen: boolean = false;
     error: Error | null = null;
 
-    constructor(private authService: Function,
-        private onRedirectCallback: Function,
-        private options: any,
-        private redirectUri: string) {
+    constructor(private pluginOptions: Auth0PluginOptions) {
         super();
-        this.authClient = this.authService(options);
+        this.authClient = pluginOptions.authService(pluginOptions.options);
         this.created();
     }
 
     async created() {
-        this.authClient = await this.authService({
-            domain: this.options.domain,
-            client_id: this.options.clientId,
-            audience: this.options.audience,
-            redirect_uri: this.redirectUri,
-            responseType: "token id_token",
-            scope: "openid profile"
-        });
+        this.authClient = await this.pluginOptions.authService(this.pluginOptions.options);
         try {
             // If the user is returning to the app after authentication..
             if (
@@ -39,7 +30,7 @@ export default class AuthVue extends Vue {
     
               // Notify subscribers that the redirect callback has happened, passing the appState
               // (useful for retrieving any pre-authentication state)
-              this.onRedirectCallback(appState);
+              this.pluginOptions.onRedirectCallback(appState);
             }
           } catch (e) {
             this.error = e;

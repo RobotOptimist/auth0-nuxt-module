@@ -1,9 +1,8 @@
 import { Auth0ModuleOptions } from './auth0ModuleOptions'
 
-export class Auth0PluginOptions {
+export default class Auth0PluginOptions {
     onRedirectCallback: Function;
     authService: Function;
-    redirectUri: string;
     options: Auth0ModuleOptions;
 
     constructor(_onRedirectCallback: Function, 
@@ -12,7 +11,6 @@ export class Auth0PluginOptions {
         _options: Auth0ModuleOptions) {
             this.onRedirectCallback = _onRedirectCallback;
             this.authService = _authService;
-            this.redirectUri = _redirectUri;
             this.options = _options;
     }
 }
