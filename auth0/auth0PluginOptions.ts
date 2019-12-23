@@ -7,7 +7,6 @@ export default class Auth0PluginOptions {
 
     constructor(_onRedirectCallback: Function, 
         _authService: Function, 
-        _redirectUri: string, 
         _options: Auth0ModuleOptions) {
             this.onRedirectCallback = _onRedirectCallback;
             this.authService = _authService;

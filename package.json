@@ -22,8 +22,11 @@
   "homepage": "https://github.com/RobotOptimist/auth0-nuxt-module#readme",
   "dependencies": {
     "@auth0/auth0-spa-js": "^1.6.0",
-    "@nuxt/types": "^0.5.7",
     "lodash": "^4.17.15",
     "vue": "^2.6.11"
+  },
+  "devDependencies": {
+    "@nuxt/types": "^0.5.7",
+    "@types/lodash": "^4.14.149"
   }
 }
