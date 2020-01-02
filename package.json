@@ -2,9 +2,13 @@
   "name": "auth0-nuxt",
   "version": "1.0.0",
   "description": "an auth0 exclusive nuxt package in typescript",
-  "main": "module/index.js",
+  "main": "lib/index.js",
   "scripts": {
-    "test": "lint && jest"
+    "test": "lint && jest",
+    "dev": "nuxt test/fixture",
+    "build": "tsc",
+    "watch": "tsc --watch",
+    "format": "prettier './**/*.{ts,json,vue,md}' --write"
   },
   "repository": {
     "type": "git",
@@ -27,6 +31,12 @@
   },
   "devDependencies": {
     "@nuxt/types": "^0.5.7",
-    "@types/lodash": "^4.14.149"
+    "@nuxt/vue-app": "^2.11.0",
+    "@types/jsdom": "^12.2.4",
+    "@types/lodash": "^4.14.149",
+    "@types/node": "^13.1.2",
+    "nuxt": "^2.11.0",
+    "prettier": "^1.19.1",
+    "typescript": "^3.7.4"
   }
 }

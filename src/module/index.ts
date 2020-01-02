@@ -10,12 +10,12 @@ const libRoot = resolve(__dirname, '..');
 
 const auth0Module: Module<Auth0ModuleOptions> = function (moduleOptions: any) {
     const options = merge({}, moduleOptions, this.options.auth);
-    const pluginOptions = new Auth0PluginOptions(moduleOptions.redirect.default, null, options);
+    const pluginOptions = new Auth0PluginOptions(moduleOptions.redirect.default, () => {}, options);
     const authVue = defineVueAuthService(pluginOptions);
     copyPlugin(authVue);
 }
 
-function copyPlugin(authVue: AuthVue) {
+function copyPlugin(this: any, authVue: AuthVue) {
     const { dst } = this.addTemplate({
         src: resolve(libRoot, 'module', 'plugin.ts'),
         fileName: join('auth', 'plugin.ts'),

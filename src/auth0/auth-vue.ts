@@ -2,6 +2,7 @@ import Vue from "vue";
 import Auth0Client from "@auth0/auth0-spa-js/dist/typings/Auth0Client";
 import Auth0PluginOptions from './auth0PluginOptions';
 
+declare const window: any;
 
 export default class AuthVue extends Vue {
     loading: boolean = true;
@@ -22,6 +23,7 @@ export default class AuthVue extends Vue {
         try {
             // If the user is returning to the app after authentication..
             if (
+              window &&
               window.location.search.includes("code=") &&
               window.location.search.includes("state=")
             ) {
